@@ -351,7 +351,7 @@ eof
           # end comment
         end
       eof
-      comment = ast.first.last.first
+      comment = ast.first.last.jump(:comment)
       comment.type.should == :comment
       comment.docstring_hash_flag.should be_true
       comment.docstring.strip.should == "comment here"
